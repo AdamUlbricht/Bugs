@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Analytics;
+using UnityEditor.Analytics;
 using System.Collections;
 using System;
 
 public class Spawner :MonoBehaviour {
+	
 	// Inspector 
 	/// <summary>
 	/// Represents the number of bugs per minute
@@ -21,6 +24,7 @@ public class Spawner :MonoBehaviour {
 	private float m_ActualSpawnRate;
 	private bool m_LevelSpawned;
 	private int m_BugsSpawnedInLevel;
+
 
 	// Public 
 	public GameObject m_Target;
@@ -73,6 +77,7 @@ public class Spawner :MonoBehaviour {
 	}
 	// Initialise the game
 	void Start() {
+		
 		m_Level = 0;
 		m_Score = 0;
 		m_TimeLeft = 1 / (m_InitSpawnRate / 60);
@@ -126,6 +131,7 @@ public class Spawner :MonoBehaviour {
 		m_BugsSpawnedInLevel = 0;
 		m_LevelSpawned = false; // Wave has not been spawned
 		UpdateLevelTimer();
+		GetComponent<AnalyticsEventTracker>().TriggerEvent();
 	}
 
 	private void SpawnWave() {
@@ -133,6 +139,7 @@ public class Spawner :MonoBehaviour {
 			Debug.Log("All bugs spawned");
 			m_LevelSpawned = true; // Wave has been spawned			
 			m_Level++; // Incement Level
+			
 		}
 		// If need to spawn more bugs this wave
 		else if(m_BugTimer > 0f) { // If Bug Timer is still counting

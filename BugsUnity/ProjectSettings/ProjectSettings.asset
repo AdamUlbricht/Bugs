@@ -713,10 +713,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 791754c0-6d9a-4589-b30b-fc2d3b2d1718
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: BugsUnity
+  organizationId: adam-ulbricht
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
