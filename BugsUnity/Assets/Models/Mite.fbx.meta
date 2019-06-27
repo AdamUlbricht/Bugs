@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: 2b1eb3fd3a1a01a478ed39f7ee46112a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Mite_Rig:Mite_Skeleton:COG_J
+    100004: Mite_Rig:Mite_Skeleton:Leg_L_01_Knee_J
+    100006: Mite_Rig:Mite_Skeleton:Leg_L_01_Toe_J
+    100008: Mite_Rig:Mite_Skeleton:Leg_L_01_ToeTip_J
+    100010: Mite_Rig:Mite_Skeleton:Leg_L_01_Top_J
+    100012: Mite_Rig:Mite_Skeleton:Leg_L_02_Knee_J
+    100014: Mite_Rig:Mite_Skeleton:Leg_L_02_Toe_J
+    100016: Mite_Rig:Mite_Skeleton:Leg_L_02_ToeTip_J
+    100018: Mite_Rig:Mite_Skeleton:Leg_L_02_Top_J1
+    100020: Mite_Rig:Mite_Skeleton:Leg_L_03_Knee_J
+    100022: Mite_Rig:Mite_Skeleton:Leg_L_03_Toe_J
+    100024: Mite_Rig:Mite_Skeleton:Leg_L_03_ToeTip_J
+    100026: Mite_Rig:Mite_Skeleton:Leg_L_03_Top_J2
+    100028: Mite_Rig:Mite_Skeleton:Leg_L_04_Knee_J
+    100030: Mite_Rig:Mite_Skeleton:Leg_L_04_Toe_J
+    100032: Mite_Rig:Mite_Skeleton:Leg_L_04_ToeTip_J
+    100034: Mite_Rig:Mite_Skeleton:Leg_L_04_Top_J3
+    100036: Mite_Rig:Mite_Skeleton:Leg_R_01_Knee_J
+    100038: Mite_Rig:Mite_Skeleton:Leg_R_01_Toe_J
+    100040: Mite_Rig:Mite_Skeleton:Leg_R_01_ToeTip_J
+    100042: Mite_Rig:Mite_Skeleton:Leg_R_01_Top_J
+    100044: Mite_Rig:Mite_Skeleton:Leg_R_02_Knee_J
+    100046: Mite_Rig:Mite_Skeleton:Leg_R_02_Toe_J
+    100048: Mite_Rig:Mite_Skeleton:Leg_R_02_ToeTip_J
+    100050: Mite_Rig:Mite_Skeleton:Leg_R_02_Top_J1
+    100052: Mite_Rig:Mite_Skeleton:Leg_R_03_Knee_J
+    100054: Mite_Rig:Mite_Skeleton:Leg_R_03_Toe_J
+    100056: Mite_Rig:Mite_Skeleton:Leg_R_03_ToeTip_J
+    100058: Mite_Rig:Mite_Skeleton:Leg_R_03_Top_J2
+    100060: Mite_Rig:Mite_Skeleton:Leg_R_04_Knee_J
+    100062: Mite_Rig:Mite_Skeleton:Leg_R_04_Toe_J
+    100064: Mite_Rig:Mite_Skeleton:Leg_R_04_ToeTip_J
+    100066: Mite_Rig:Mite_Skeleton:Leg_R_04_Top_J3
+    100068: Mite_Rig:Mite_Skeleton:Master_J
+    100070: Mite_Rig:Mite_Skeleton:Mite_Geo:g_Body
+    400000: //RootNode
+    400002: Mite_Rig:Mite_Skeleton:COG_J
+    400004: Mite_Rig:Mite_Skeleton:Leg_L_01_Knee_J
+    400006: Mite_Rig:Mite_Skeleton:Leg_L_01_Toe_J
+    400008: Mite_Rig:Mite_Skeleton:Leg_L_01_ToeTip_J
+    400010: Mite_Rig:Mite_Skeleton:Leg_L_01_Top_J
+    400012: Mite_Rig:Mite_Skeleton:Leg_L_02_Knee_J
+    400014: Mite_Rig:Mite_Skeleton:Leg_L_02_Toe_J
+    400016: Mite_Rig:Mite_Skeleton:Leg_L_02_ToeTip_J
+    400018: Mite_Rig:Mite_Skeleton:Leg_L_02_Top_J1
+    400020: Mite_Rig:Mite_Skeleton:Leg_L_03_Knee_J
+    400022: Mite_Rig:Mite_Skeleton:Leg_L_03_Toe_J
+    400024: Mite_Rig:Mite_Skeleton:Leg_L_03_ToeTip_J
+    400026: Mite_Rig:Mite_Skeleton:Leg_L_03_Top_J2
+    400028: Mite_Rig:Mite_Skeleton:Leg_L_04_Knee_J
+    400030: Mite_Rig:Mite_Skeleton:Leg_L_04_Toe_J
+    400032: Mite_Rig:Mite_Skeleton:Leg_L_04_ToeTip_J
+    400034: Mite_Rig:Mite_Skeleton:Leg_L_04_Top_J3
+    400036: Mite_Rig:Mite_Skeleton:Leg_R_01_Knee_J
+    400038: Mite_Rig:Mite_Skeleton:Leg_R_01_Toe_J
+    400040: Mite_Rig:Mite_Skeleton:Leg_R_01_ToeTip_J
+    400042: Mite_Rig:Mite_Skeleton:Leg_R_01_Top_J
+    400044: Mite_Rig:Mite_Skeleton:Leg_R_02_Knee_J
+    400046: Mite_Rig:Mite_Skeleton:Leg_R_02_Toe_J
+    400048: Mite_Rig:Mite_Skeleton:Leg_R_02_ToeTip_J
+    400050: Mite_Rig:Mite_Skeleton:Leg_R_02_Top_J1
+    400052: Mite_Rig:Mite_Skeleton:Leg_R_03_Knee_J
+    400054: Mite_Rig:Mite_Skeleton:Leg_R_03_Toe_J
+    400056: Mite_Rig:Mite_Skeleton:Leg_R_03_ToeTip_J
+    400058: Mite_Rig:Mite_Skeleton:Leg_R_03_Top_J2
+    400060: Mite_Rig:Mite_Skeleton:Leg_R_04_Knee_J
+    400062: Mite_Rig:Mite_Skeleton:Leg_R_04_Toe_J
+    400064: Mite_Rig:Mite_Skeleton:Leg_R_04_ToeTip_J
+    400066: Mite_Rig:Mite_Skeleton:Leg_R_04_Top_J3
+    400068: Mite_Rig:Mite_Skeleton:Master_J
+    400070: Mite_Rig:Mite_Skeleton:Mite_Geo:g_Body
+    2100000: lambert1
+    4300000: Mite_Rig:Mite_Skeleton:Mite_Geo:g_Body
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Mite_Rig:Mite_Skeleton:Mite_Geo:g_Body
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
