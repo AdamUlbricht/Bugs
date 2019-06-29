@@ -3,38 +3,43 @@ using UnityEngine;
 using UnityScript;
 using System.Collections;
 using System;
-
+[RequireComponent(typeof(BugMovement))]
 public class BugController :MonoBehaviour {
-	/// <summary>
+	// TODO: Create remote settings for bug types
+	
 	/// Represents whether or not this bug has reached its target destination
-	/// </summary>
-	[SerializeField] public bool Reached;
-	/// <summary>
+	[SerializeField] private bool m_ArrivedAtTarget = false;
 	/// Represents the time between dealing damage to the target
-	/// </summary>
-	[SerializeField] public float DamageTime;
-	/// <summary>
+	[SerializeField] private float m_DamageTime = 1;
 	/// Represents the amount of damage this bug deals to the target
-	/// </summary>
-	[SerializeField] public int DamageValue;
-	[SerializeField] public int ScoreValue;
-	public float timer;
-	Vegie vegie;
-	public GameObject SpawnerObject;
+	[SerializeField] private int m_DamageValue = 5;
+	// Represents the number of points awarded to the player for killing this bug
+	[SerializeField] private int m_ScoreValue = 1;
+	// The timer for damage interval
+	private float m_WaitTimer = 0f;
+	// The spawner script
 	private Spawner m_Spawner;
-	// Use this for initialization
-	void Start() {
-		m_Spawner = SpawnerObject.GetComponent<Spawner>();
-		Reached = false;
+	// Used to detect collision with the vegie
+	private Vegie vegie;
+
+	private BugMovement BugMovement {
+		get {
+			return GetComponent<BugMovement>();
+		}
+	}
+
+	// Initialise the bug when removed from the pool
+	void OnEnable() {
+		m_ArrivedAtTarget = false;
 		vegie = null;
 	}
-	/// <summary>
-	/// Returns true if this grub has been clicked on
-	/// </summary>
+	// Returns true if this grub has been clicked on
 	public bool CastRay {
 		get {
+			// Create a ray cast from input position 
 			RaycastHit hitInfo = new RaycastHit();
-			bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+			var hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+			// If ray cast intersects this bug
 			if(hitInfo.transform.gameObject == this.gameObject) {
 				return true;
 			}
@@ -43,42 +48,56 @@ public class BugController :MonoBehaviour {
 		}
 	}
 
+	// Allows the spawner to create a reference
+	public void SetSpawner(Spawner spawner) {
+		m_Spawner = spawner;
+	}
+
+	// When click or touch input is recieved
 	public void OnMouseDown() {
+		// If click or touch on a bug
 		if(CastRay) {
-			//SpawnerObject.GetComponent<AudioSource>().Play();
-			GetComponent<AudioSource>().Play();
-			m_Spawner.m_BugsLeft--;
-			Spawner.m_Score += ScoreValue;
-			Destroy(this.gameObject);
+			// Kill the bug
+			m_Spawner.BugKilled(this.gameObject, m_ScoreValue);
 		}
 	}
 
+	// When colliding with the veige, reached is true
 	void OnCollisionEnter(Collision collision) {
-		vegie = collision.gameObject.GetComponent<Vegie>();
-		if(vegie) {
-			Reached = true;
-		}
-	}
-	
-	private void OnCollisionExit(Collision collision) {
-		vegie = collision.gameObject.GetComponent<Vegie>();
-		if(vegie) {
-			Reached = false;
+		// If there is a vegie component on the colliding object
+		if(collision.gameObject.GetComponent<Vegie>() != null) {
+			// Assign the vegie component
+			vegie = collision.gameObject.GetComponent<Vegie>();
+			// The bug has reached the vegie
+			m_ArrivedAtTarget = true;
 		}
 	}
 
+	// Applies damage to the colliding vegie
 	void ApplyDamage() {
-		timer -= Time.deltaTime;
-		if(timer < 0f) {
-			if(vegie != null)
-				vegie.Damage(DamageValue);
-			timer = DamageTime;
+		if(m_WaitTimer < 0f) {
+			// Apply Damage
+			// Reset the countdown
+			m_WaitTimer = m_DamageTime;
+			// If there is a vegie component 
+			if(vegie != null) {
+				// Tell the vegie to receive damaged
+				vegie.Damage(m_DamageValue);
+			}
 		}
+		// Countdown the wait timer
+		m_WaitTimer -= Time.deltaTime;
 	}
 
 	// Update is called once per frame
 	void Update() {
-		if(Reached)
+		// If bug has NOT reached the target
+		if(!m_ArrivedAtTarget) {
+			BugMovement.ApplyTurn();
+			BugMovement.ApplyMove();
+		}
+		else {
 			ApplyDamage();
+		}
 	}
 }

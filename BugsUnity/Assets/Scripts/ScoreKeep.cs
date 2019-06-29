@@ -4,17 +4,18 @@ using System.Collections;
 using TMPro;
 
 public class ScoreKeep :MonoBehaviour {
-	//private Text score;
-	private TextMeshProUGUI scoreTMP;
+	public TextMeshProUGUI m_scoreTMP;
+	public TextMeshProUGUI m_HighScoreTMP;
+	public int m_Score;
+	public int m_HighScore;
 
-	// Use this for initialization
-	void Start() {
-		//score = GetComponent<Text> ();
-		scoreTMP = gameObject.GetComponent<TextMeshProUGUI>();
+	public void ScoreUpdate(int score) {
+		m_scoreTMP.SetText(score.ToString());
+		m_Score = score;
 	}
 
-	// Update is called once per frame
-	void Update() {
-		scoreTMP.SetText(Spawner.m_Score.ToString());
+	public void HighScoreUpdate(int score) {
+		m_HighScoreTMP.SetText(score.ToString());
+		m_HighScore = score;
 	}
 }

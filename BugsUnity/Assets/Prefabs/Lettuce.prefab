@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &540033873606307881
 Transform:
@@ -93,7 +93,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &540033873606307883
 Transform:
@@ -102,7 +102,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540033873606405131}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -135,10 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f66153961488aa4fabc3acf9ceccfcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmIHurt: 0
-  dmg_Mat: {fileID: 2100000, guid: 1409913fe360c9e469c0ce68a9fad8da, type: 2}
-  reg_Mat: {fileID: 2100000, guid: a1165804c61b0b94a81a4d74ca811106, type: 2}
-  materialTime: 0.3
-  ChangeMe:
-  - {fileID: 540033873606405129}
-  HealthKeeper: {fileID: 0}
+  m_TimesToSwap: 3
+  m_DamagedMaterial: {fileID: 2100000, guid: 1409913fe360c9e469c0ce68a9fad8da, type: 2}
+  m_MaterialSwapDelay: 0.3
+  m_MeshRendererToChange:
+  - {fileID: 540033873604408009}
+  m_HealthKeeper: {fileID: 0}
