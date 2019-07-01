@@ -135,9 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f66153961488aa4fabc3acf9ceccfcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_HealthManager: {fileID: 11400000, guid: 6b23b97e1888c374bbd464cb7b149a1c, type: 2}
   m_TimesToSwap: 3
   m_DamagedMaterial: {fileID: 2100000, guid: 1409913fe360c9e469c0ce68a9fad8da, type: 2}
   m_MaterialSwapDelay: 0.3
   m_MeshRendererToChange:
   - {fileID: 540033873604408009}
-  m_HealthKeeper: {fileID: 0}

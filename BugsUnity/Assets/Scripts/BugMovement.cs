@@ -10,7 +10,10 @@ public class BugMovement :MonoBehaviour {
 	// Represents how far the bug turns
 	[SerializeField] private float m_TurnAmount = 15f;
 	// Represents the target of the bug
-	public GameObject m_TargetObject;
+	private GameObject m_TargetObject;
+	public void SetTarget(GameObject target) {
+		m_TargetObject = target;
+	}
 	// Individual offset for sin wave function
 	[SerializeField] private float m_SinOffset = 0f;
 

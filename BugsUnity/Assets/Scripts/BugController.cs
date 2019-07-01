@@ -6,9 +6,22 @@ using System;
 [RequireComponent(typeof(BugMovement))]
 public class BugController :MonoBehaviour {
 	// TODO: Create remote settings for bug types
-	
+	// A reference to the bug manager scriptable object
+	// NOTE: use the bug manager to initialise bugs when instantiated or taken from the pool.
+	private ScoreManager m_ScoreManager;
+	// A reference to the movement script attached to this bug
+	private BugMovement BugMovement {
+		get {
+			return GetComponent<BugMovement>();
+		}
+	}
+	public void Initialize(ScoreManager scoreManager, Spawner spawner, GameObject target) {
+		BugMovement.SetTarget(target);
+		m_Spawner = spawner;
+		this.m_ScoreManager = scoreManager;
+	}
 	/// Represents whether or not this bug has reached its target destination
-	[SerializeField] private bool m_ArrivedAtTarget = false;
+	private bool m_ArrivedAtTarget = false;
 	/// Represents the time between dealing damage to the target
 	[SerializeField] private float m_DamageTime = 1;
 	/// Represents the amount of damage this bug deals to the target
@@ -21,15 +34,9 @@ public class BugController :MonoBehaviour {
 	private Spawner m_Spawner;
 	// Used to detect collision with the vegie
 	private Vegie vegie;
-
-	private BugMovement BugMovement {
-		get {
-			return GetComponent<BugMovement>();
-		}
-	}
-
 	// Initialise the bug when removed from the pool
 	void OnEnable() {
+		m_WaitTimer = 0f;
 		m_ArrivedAtTarget = false;
 		vegie = null;
 	}
@@ -47,21 +54,16 @@ public class BugController :MonoBehaviour {
 				return false;
 		}
 	}
-
-	// Allows the spawner to create a reference
-	public void SetSpawner(Spawner spawner) {
-		m_Spawner = spawner;
-	}
-
 	// When click or touch input is recieved
 	public void OnMouseDown() {
 		// If click or touch on a bug
 		if(CastRay) {
+			// Add the score
+			m_ScoreManager.AddScore(m_ScoreValue);
 			// Kill the bug
-			m_Spawner.BugKilled(this.gameObject, m_ScoreValue);
+			m_Spawner.BugKilled(this.gameObject);
 		}
 	}
-
 	// When colliding with the veige, reached is true
 	void OnCollisionEnter(Collision collision) {
 		// If there is a vegie component on the colliding object
@@ -72,11 +74,10 @@ public class BugController :MonoBehaviour {
 			m_ArrivedAtTarget = true;
 		}
 	}
-
 	// Applies damage to the colliding vegie
-	void ApplyDamage() {
+	void TargetReached() {
+		// If countdown is complete
 		if(m_WaitTimer < 0f) {
-			// Apply Damage
 			// Reset the countdown
 			m_WaitTimer = m_DamageTime;
 			// If there is a vegie component 
@@ -88,7 +89,6 @@ public class BugController :MonoBehaviour {
 		// Countdown the wait timer
 		m_WaitTimer -= Time.deltaTime;
 	}
-
 	// Update is called once per frame
 	void Update() {
 		// If bug has NOT reached the target
@@ -97,7 +97,11 @@ public class BugController :MonoBehaviour {
 			BugMovement.ApplyMove();
 		}
 		else {
-			ApplyDamage();
+			TargetReached();
 		}
+	}
+	internal void SetTransform(Vector3 spawnLocation, Quaternion rotation) {
+		transform.position = spawnLocation;
+		transform.rotation = rotation;
 	}
 }
