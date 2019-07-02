@@ -56,7 +56,9 @@ public class MenuController : MonoBehaviour
 		m_PauseUI.SetActive(false);
 		m_GameUI.SetActive(false);
 		m_TiteUI.SetActive(true);
-		SceneManager.LoadScene(0);
+		if(SceneManager.GetActiveScene().buildIndex != 0) {
+			SceneManager.LoadScene(0);
+		}
 	}
 
 	public void UpdateHealthUI(string t) {

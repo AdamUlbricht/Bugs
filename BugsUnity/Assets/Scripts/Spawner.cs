@@ -4,8 +4,8 @@ using System.Collections;
 using System;
 
 public class Spawner :MonoBehaviour {
-	// A list containing all Bug prefabs
-	[SerializeField] private GameObject[] m_Bug;
+	// A particle system to play on bug death
+	[SerializeField] private ParticleSystem m_BugDeathPFX;
 	// A reference to the BugManager
 	[SerializeField] private ScoreManager m_ScoreManager;
 	// A reference to the bug death sound effect
@@ -187,6 +187,10 @@ public class Spawner :MonoBehaviour {
 
 	// Kills the bug
 	public void BugKilled(GameObject bug) {
+		var pfx = ParticlePool.Instance.Get();
+		pfx.transform.SetPositionAndRotation(bug.transform.position, bug.transform.rotation);
+		pfx.gameObject.SetActive(true);
+		pfx.Play();
 		// Play the bug death sound
 		m_BugDeathSFX.Play();
 		// Decrease the bugs left on the screen
